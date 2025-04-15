@@ -128,6 +128,7 @@ func (c *Collector) GetName() string {
 
 func (c *Collector) Close() error {
 	c.perfDataCollector.Close()
+
 	return nil
 }
 
