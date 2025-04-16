@@ -115,6 +115,7 @@ func NewWithFlags(app *kingpin.Application) *Collector {
 
 	app.Action(func(*kingpin.ParseContext) error {
 		c.config.CollectorsEnabled = strings.Split(collectorsEnabled, ",")
+
 		return nil
 	})
 
@@ -127,6 +128,7 @@ func (c *Collector) GetName() string {
 
 func (c *Collector) Close() error {
 	c.perfDataCollector.Close()
+
 	return nil
 }
 
@@ -160,6 +162,7 @@ func (c *Collector) isCollectorEnabled(collector string) bool {
 			return true
 		}
 	}
+
 	return false
 }
 
